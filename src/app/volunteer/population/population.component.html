@@ -1,0 +1,81 @@
+<div>
+  <h1>National Population Register</h1>
+  <h4> Please fill in the details below:</h4>
+   <form #userForm="ngForm">
+     <hr />
+       <div class="form-group">
+      <label>Full Name of Person </label>
+      <input type="text" class="form-control" required #FullName="ngModel" [(ngModel)]="userModel.FullName" name="FullName">
+     </div>
+     <div *ngIf="!FullName.valid && FullName.touched">
+                  <p class="small error-msg text-center" *ngIf="FullName.errors.required">
+                   required
+                 </p>
+                 <p class="small error-msg text-center" *ngIf="FullName.errors.email">
+                   invalid
+                 </p>
+                </div>
+     <div class="form-group">
+      <label>Census House Number </label>
+      <input type="text" class="form-control" required #HouseListingID="ngModel" [(ngModel)]="userModel.HouseListingID" name="HouseListingID">
+     </div>
+     <div *ngIf="!HouseListingID.valid && HouseListingID.touched">
+                  <p class="small error-msg text-center" *ngIf="HouseListingID.errors.required">
+                   required
+                 </p>
+                 <p class="small error-msg text-center" *ngIf="HouseListingID.errors.email">
+                   invalid
+                 </p>
+                </div>
+     <div class="form-group">
+      <select class="custom-select" [(ngModel)]="userModel.RelationToHead" name="RelationToHead">
+      <option selected> Relationship To Head </option>
+      <option *ngFor="let x of RelationToHead" >{{ x }}</option>
+      </select>
+      </div>
+      <div class="form-group">
+        <select class="custom-select" [(ngModel)]="userModel.Gender" name="Gender">
+        <option selected> Gender</option>
+        <option *ngFor="let x of Gender" >{{ x }}</option>
+        </select>
+        </div>
+     <div class="form-group">
+      <label>Date Of Birth </label>
+      <input type="date" class="form-control" [(ngModel)]="userModel.DOB" name="DOB">
+     </div>
+     
+     <div class="form-group">
+      <select class="custom-select" [(ngModel)]="userModel.MaritalStatus" name="MaritalStatus">
+      <option selected> Marital Status</option>
+      <option *ngFor="let x of MaritalStatus" >{{ x }}</option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label>Age at Marraige </label>
+        <input type="number" class="form-control" required #AgeAtMarriage="ngModel" [(ngModel)]="userModel.AgeAtMarriage" name="AgeAtMarriage">
+       </div>
+       <div *ngIf="!AgeAtMarriage.valid && AgeAtMarriage.touched">
+                    <p class="small error-msg text-center" *ngIf="AgeAtMarriage.errors.required">
+                     required
+                   </p>
+                   <p class="small error-msg text-center" *ngIf="AgeAtMarriage.errors.email">
+                     invalid
+                   </p>
+                  </div>
+        <div class="form-group">
+        <select class="custom-select" [(ngModel)]="userModel.NatureOfOccupation" name="NatureOfOccupation">
+        <option selected> Nature of Occupation Industry</option>
+        <option *ngFor="let x of NatureOfOccupation" >{{ x }}</option>
+        </select>
+        </div>
+        <div class="form-group">
+          <select class="custom-select" [(ngModel)]="userModel.OccupationStatus" name="OccupationStatus">
+          <option selected> Occupation Status</option>
+          <option *ngFor="let x of OccupationStatus" >{{ x }}</option>
+          </select>
+          </div>
+          
+<button class="btn btn-primary" type="submit" (click)="submit(userModel)"> Submit </button>
+ 
+   </form>
+  </div>

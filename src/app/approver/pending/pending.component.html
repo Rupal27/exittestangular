@@ -1,0 +1,40 @@
+<div *ngIf="!isListFetched">
+    waiting...
+</div>
+<div *ngIf="isListFetched">
+
+<table class="table table-striped" style="width:75% ; margin-left:10.5%;margin-top: 1%">
+        <tbody *ngFor="let item of pendingList">
+          <tr style="height:100px;background-color:rgb(230, 230, 230)">
+            <td >
+              <span >
+                <img src="data:image/jpeg;base64,{{item.profileImage}}" style="width: 100px;height: 100px;">
+              </span>
+            </td>
+            <td>
+              <span >
+      
+                <p><b>Name: {{item.firstName }}</b></p>
+                <br>
+                <p><b>Email: {{item.email}}</b></p>
+      
+              </span>
+            </td>
+            <td>
+              <span>
+                <button class="btn btn-success" (click)="accepted(item)">Accept</button>
+              </span>
+            </td>
+            <td>
+              <span>
+                <button class="btn btn-danger" (click)="onClick(item,'declined')">Decline</button>
+      
+              </span>
+            </td>
+          </tr>
+          <br>
+        </tbody>
+      
+      </table>
+      
+    </div>

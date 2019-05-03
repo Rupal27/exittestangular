@@ -1,0 +1,15 @@
+<nav>
+  <!--a routerLink="/volunteer/houselisting"> HouseListing </a>
+  <a routerLink="/volunteer/population"> National Population Register </a> -->
+  <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active-link" routerLink="/volunteer/houselisting">HouseListing</a>
+      </li>
+  <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active-link" routerLink="/volunteer/population">National Population
+      Register</a>
+      </li> 
+      <button class="btn btn-primary"  (click)="onLogOut()" > Logout </button>
+
+</nav> 
+<router-outlet></router-outlet>
+  

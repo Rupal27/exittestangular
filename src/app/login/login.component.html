@@ -1,0 +1,40 @@
+<div>
+<h1>Login Page</h1>
+   <form #userForm="ngForm">
+     <hr />
+    
+     <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" required email #email="ngModel" [(ngModel)]="userModel.Email" name="Email">
+     </div>
+     <div *ngIf="!email.valid && email.touched">
+                  <p class="small error-msg text-center" *ngIf="email.errors.required">
+                   required
+                 </p>
+                 <p class="small error-msg text-center" *ngIf="email.errors.email">
+                   invalid
+                 </p>
+                </div> 
+              
+      <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" name="Password" required Password #Password="ngModel" [(ngModel)]="userModel.Password" >
+    </div>
+    <div *ngIf="!Password.valid && Password.touched">
+                  <p class="small error-msg text-center" *ngIf="Password.errors.required">
+                   required
+                 </p>
+                 <p class="small error-msg text-center" *ngIf="Password.errors.email">
+                   invalid
+                 </p>
+                </div> 
+              
+
+
+<button class="btn btn-primary" type="submit" (click)="submit()" > Submit </button>
+<br>
+<button class="btn btn-primary" (click)="register()"> Register New User </button>
+ 
+   </form>
+  </div>
+  

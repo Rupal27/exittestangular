@@ -1,0 +1,15 @@
+<nav>
+    <!--a routerLink="/volunteer/houselisting"> HouseListing </a>
+    <a routerLink="/volunteer/population"> National Population Register </a> -->
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" routerLink="/approver/pending">Pending Requests</a>
+        </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" routerLink="/approver/declined">Declined</a>
+        </li> 
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-link" routerLink="/approver/approved">Approved</a>
+            </li> 
+            <button class="btn btn-primary"  (click)="onLogOut()" > Logout </button>
+  </nav> 
+  <router-outlet></router-outlet>

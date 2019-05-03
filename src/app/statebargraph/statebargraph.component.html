@@ -1,0 +1,17 @@
+
+<div *ngIf="isDataFetched">
+<div style="display: block">
+<canvas baseChart
+[datasets]="barChartData"
+[labels]="barChartLabels"
+[options]="barChartOptions"
+[plugins]="barChartPlugins"
+[legend]="barChartLegend"
+[chartType]="barChartType">
+</canvas>
+</div>
+</div>
+<div *ngIf="!isDataFetched">
+Collecting data...
+</div> 
+ 

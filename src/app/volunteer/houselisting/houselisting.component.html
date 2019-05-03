@@ -1,0 +1,87 @@
+<div>
+  <h1>House Listing Data Collection</h1>
+  <h4> Please fill in the details below:</h4>
+   <form #userForm="ngForm">
+     <hr />
+       <div class="form-group">
+      <label>Building </label>
+      <input type="text" class="form-control" required #ApartmentNumber="ngModel" [(ngModel)]="userModel.ApartmentNumber" name="ApartmentNumber">
+     </div>
+     <div *ngIf="!ApartmentNumber.valid && ApartmentNumber.touched">
+                  <p class="small error-msg text-center" *ngIf="ApartmentNumber.errors.required">
+                   required
+                 </p>
+                 
+                </div>
+     <div class="form-group">
+      <label>Street </label>
+      <input type="text" class="form-control" required  #StreetName="ngModel" [(ngModel)]="userModel.StreetName" name="StreetName">
+     </div>
+     <div *ngIf="!ApartmentNumber.valid && ApartmentNumber.touched">
+                  <p class="small error-msg text-center" *ngIf="StreetName.errors.required">
+                   required
+                 </p>
+                 <p class="small error-msg text-center" *ngIf="StreetName.errors.email">
+                   invalid
+                 </p>
+                </div>
+     <div class="form-group">
+      <label>City </label>
+      <input type="text" class="form-control" required  #City="ngModel" [(ngModel)]="userModel.City" name="City">
+     </div>
+     <div *ngIf="!City.valid && City.touched">
+                  <p class="small error-msg text-center" *ngIf="City.errors.required">
+                   required
+                 </p>
+                 <p class="small error-msg text-center" *ngIf="City.errors.email">
+                   invalid
+                 </p>
+                </div>
+    <div class="form-group">
+      <label>State</label>
+      <input type="text" class="form-control" required #State="ngModel" [(ngModel)]="userModel.State" name="State">
+     </div>
+     <div *ngIf="!State.valid && State.touched">
+                  <p class="small error-msg text-center" *ngIf="State.errors.required">
+                   required
+                 </p>
+                 <p class="small error-msg text-center" *ngIf="State.errors.email">
+                   invalid
+                 </p>
+                </div>
+     <div class="form-group">
+      <label>Full Name Of Head</label>
+      <input type="text" class="form-control"  required #NameOfHead="ngModel" [(ngModel)]="userModel.NameOfHead" name="NameOfHead">
+     </div>
+
+     <div *ngIf="!NameOfHead.valid && NameOfHead.touched">
+                  <p class="small error-msg text-center" *ngIf="NameOfHead.errors.required">
+                   required
+                 </p>
+                 <p class="small error-msg text-center" *ngIf="NameOfHead.errors.email">
+                   invalid
+                 </p>
+                </div>
+     <div class="form-group">
+      <select class="custom-select" [(ngModel)]="userModel.OwnershipStatus" name="OwnershipStatus">
+      <option selected> Ownership status </option>
+      <option *ngFor="let x of OwnershipStatus" >{{ x }}</option>
+      </select>
+      </div>
+
+     <div class="form-group">
+      <label>Number Of Rooms</label>
+      <input type="number" class="form-control" [(ngModel)]="userModel.NumberofRooms" name="NumberofRooms">
+     </div>
+     <div *ngIf="!NumberofRooms.valid && NumberofRooms.touched">
+                  <p class="small error-msg text-center" *ngIf="NumberofRooms.errors.required">
+                   required
+                 </p>
+                 <p class="small error-msg text-center" *ngIf="NumberofRooms.errors.email">
+                   invalid
+                 </p>
+                </div>
+<button class="btn btn-primary" type="submit" (click)="submit(userModel)"> Submit </button>
+ 
+   </form>
+  </div>
