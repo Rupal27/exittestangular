@@ -10,6 +10,7 @@ import { NgModel } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public imagelink="./../../assets/image/adventure-cold-daylight.jpg";
   public list = [];
   constructor(private router: Router,
     private _memberservice: UserserviceService) {

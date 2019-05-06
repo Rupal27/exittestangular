@@ -24,9 +24,10 @@ export class RegisterpageComponent implements OnInit {
 
 
   submit() {
-    console.log(this.userModel.Email);
-    console.log(this.userModel.FirstName);
-    console.log(this.userModel.Password);
+    // console.log(this.userModel.Email);
+    // console.log(this.userModel.FirstName);
+    // console.log(this.userModel.Password);
+    console.log(this.userModel);
     this._memberservice.postData(this.userModel, this.binaryString, this.fileToUpload.name).subscribe((data) => {
       if (!data) {
         alert('Data was not added');
